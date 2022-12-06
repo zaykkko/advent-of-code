@@ -1,8 +1,9 @@
 {
   "name": "adventofcode",
   "version": "1.0.0",
-  "description": "Advent of code waht else",
+  "description": "Advent of code what else",
   "scripts": {
+    "lint": "eslint ./src --ext .ts",
     "build": "tsc && tsc-alias && npm start",
     "start": "node ./build"
   },
@@ -18,6 +19,9 @@
   "homepage": "https://github.com/zaykkko/adventofcode#readme",
   "devDependencies": {
     "@types/node": "^18.11.10",
+    "@typescript-eslint/eslint-plugin": "^5.45.1",
+    "@typescript-eslint/parser": "^5.45.1",
+    "eslint": "^8.29.0",
     "tsc-alias": "^1.8.1",
     "typescript": "^4.9.3"
   }

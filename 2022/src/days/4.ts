@@ -8,8 +8,8 @@ export default class Puzzle extends PuzzleHelper<number> {
     const pairs_parsed = this.cleaned_input.map((value) => value.split(","));
 
     pairs_parsed.forEach(([range1, range2]) => {
-      const [range_x1, range_x2] = range1.split("-").map((num) => +num);
-      const [range_y1, range_y2] = range2.split("-").map((num) => +num);
+      const [range_x1, range_x2] = range1.split("-").map(Number);
+      const [range_y1, range_y2] = range2.split("-").map(Number);
 
       if ((range_y1 - range_x1) * (range_y2 - range_x2) <= 0) {
         totally_contained++;

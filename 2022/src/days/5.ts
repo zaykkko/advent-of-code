@@ -10,8 +10,9 @@ export default class Puzzle extends PuzzleHelper<string> {
     const parsed_crate_map = raw_crate_map.slice(0, raw_crate_map.length - 1);
 
     for (let i = parsed_crate_map.length - 1; i >= 0; i--) {
+      // https://regex101.com/r/DyDRkf/1
       const line = parsed_crate_map[i]
-        .split(/([\[A-Z\]\s]{3})\s?/) // https://regex101.com/r/DyDRkf/1
+        .split(/([\[A-Z\]\s]{3})\s?/) // eslint-disable-line no-useless-escape
         .filter(Boolean)
         .map((crate) =>
           crate.replace(/^\s+|\s+$/g, "").replace(/\[(.*?)\]/, "$1")

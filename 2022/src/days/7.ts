@@ -19,7 +19,7 @@ class Directory {
   stringify() {
     const directory_arr: (string | FolderType)[] = [];
 
-    for (let file_or_folder of this.files.values()) {
+    for (const file_or_folder of this.files.values()) {
       if (file_or_folder instanceof Directory) {
         const directory = file_or_folder.stringify();
         directory_arr.push({
@@ -38,7 +38,7 @@ class Directory {
     const sub_directories_with_sizes: FolderDirSizeType[] = [];
     let this_directory_size = 0;
 
-    for (let file_or_folder of this.files.values()) {
+    for (const file_or_folder of this.files.values()) {
       if (file_or_folder instanceof Directory) {
         const [size_of_directories_there, directories] =
           file_or_folder.size_of_directories() as [number, FolderDirSizeType[]];
@@ -80,12 +80,12 @@ class Directory {
   }
 
   add(file: Directory | File, dir_path: string[]) {
-    const [_, target_path, ...left_path] = dir_path;
+    const [, target_path, ...left_path] = dir_path;
 
     if (!target_path) {
       this.files.set(file.name, file);
     } else {
-      let directory = this.get_dir(target_path);
+      const directory = this.get_dir(target_path);
 
       if (!directory) {
         throw new PuzzleError(

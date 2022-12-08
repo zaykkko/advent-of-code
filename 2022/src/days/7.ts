@@ -14,7 +14,7 @@ type FolderDirSizeType = {
 class Directory {
   private files: Map<string, File | Directory> = new Map();
 
-  constructor(readonly name: string, readonly is_in_root: boolean) {}
+  constructor(readonly name: string) {}
 
   stringify() {
     const directory_arr: (string | FolderType)[] = [];
@@ -119,7 +119,7 @@ export default class Puzzle extends PuzzleHelper<number> {
   readonly UPDATE_REQUIRED_SPACE = 30000000;
   readonly MAX_DIR_SIZE = 100000;
 
-  protected disk: Directory = new Directory("/", true);
+  protected disk: Directory = new Directory("/");
 
   resolve() {
     let is_reading = false,
@@ -143,7 +143,7 @@ export default class Puzzle extends PuzzleHelper<number> {
         default:
           if (is_reading) {
             if (cmd == "dir") {
-              const dir = new Directory(arg, current_dir.length == 1);
+              const dir = new Directory(arg);
               this.disk.add(dir, current_dir);
             } else {
               // on a file case the "cmd" arg is the file size and the "arg" arg is the file name. :)

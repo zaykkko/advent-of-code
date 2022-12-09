@@ -125,7 +125,7 @@ export default class Puzzle extends PuzzleHelper<number> {
     let is_reading = false,
       current_dir: string[] = [""];
 
-    this.cleaned_input.forEach((line) => {
+    this.cleanInput().forEach((line) => {
       const [cmd, arg] = line.replace(/\$\s/, "").split(/\s/);
 
       switch (cmd) {

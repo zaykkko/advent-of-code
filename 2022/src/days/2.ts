@@ -58,7 +58,7 @@ export default class Puzzle extends PuzzleHelper<number> {
 
     // Podría haber calculado ambos resultados con un único loop, pero como la idea de AoC no se basa en el mejor algorítmo para la mejor performance sino que encontrarle la solución al problema... heh//lo terminé haciendo en un único loop kekw
 
-    this.cleaned_input.forEach((round) => {
+    this.cleanInput().forEach((round) => {
       const [other, second_arg] = round.split(/\s/);
 
       // First part of the challenge, second_arg = my_choice

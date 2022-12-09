@@ -17,7 +17,9 @@ export default class Puzzle extends PuzzleHelper<number> {
     let priority_sum = 0,
       group_priority_sum = 0;
 
-    const rucksacks_compartments = this.cleaned_input.map((rucksack) => [
+    const cleaned_input = this.cleanInput();
+
+    const rucksacks_compartments = cleaned_input.map((rucksack) => [
       rucksack.slice(0, rucksack.length / 2),
       rucksack.slice(rucksack.length / 2, rucksack.length),
     ]);
@@ -34,7 +36,7 @@ export default class Puzzle extends PuzzleHelper<number> {
       priority_sum += this.getPriority(repeated_letter);
     });
 
-    const rucksacks_grouped = groupArray<string>(this.cleaned_input, 3);
+    const rucksacks_grouped = groupArray<string>(cleaned_input, 3);
     rucksacks_grouped.forEach((rucksack_group) => {
       const [item_1, item_2, item_3] = rucksack_group.sort(
         (a, b) => a.length - b.length

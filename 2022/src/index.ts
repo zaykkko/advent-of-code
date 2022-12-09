@@ -58,8 +58,10 @@ class PuzzleResolver {
             (module: {
               default: { new (input_path: string): PuzzleHelper };
             }) => {
+              const pNow = performance.now();
               const puzzle = new module.default(input_path);
               const [part1, part2] = puzzle.resolve();
+              const pAfter = performance.now();
 
               console.log(
                 `\x1b[32m\x1b[4mDay ${day} responses are\x1b[0m:`,
@@ -67,6 +69,8 @@ class PuzzleResolver {
                 `\x1b[36m* Part 1: \x1b[33m${part1}\x1b[0m`,
                 "\n",
                 `\x1b[36m* Part 2: \x1b[33m${part2}\x1b[0m`,
+                "\n",
+                `Puzzle took ${(pAfter - pNow).toFixed(2)}ms to resolve.`,
                 "\n"
               );
             }

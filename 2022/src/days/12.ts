@@ -11,7 +11,6 @@ type CoordsWithSteps = {
 // TODO: un algorítmo simple que nesteará cada camino en subcaminos sucesivos hasta que uno de esos caminos llegue a la meta, el primero en llegar es el camino más corto, el último es el camino más largo. :)
 export default class Puzzle extends PuzzleHelper<number> {
   readonly hill_size_offset = 96;
-  readonly goal_id_size = 999;
 
   getLowestSteps(
     grid: number[][],

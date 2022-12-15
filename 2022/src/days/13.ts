@@ -92,8 +92,6 @@ export default class Puzzle extends PuzzleHelper<number> {
       1
     );
 
-    console.log(sorted_packets);
-
     return [packets_summ, packets_decode_key];
   }
 }

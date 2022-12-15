@@ -1,27 +1,31 @@
 {
   "name": "adventofcode",
   "version": "1.0.0",
-  "description": "Advent of code what else",
+  "description": "🎄",
   "scripts": {
     "lint": "eslint ./src --ext .ts",
+    "format": "prettier --write \"**/*.{md,json,prettierrc,ts}\"",
+    "check:format": "prettier --check \"**/*.{md,json,prettierrc,ts}\"",
     "build": "tsc && tsc-alias && npm start",
     "start": "node ./build"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/zaykkko/adventofcode.git"
+    "url": "git+https://github.com/zaykkko/advent-of-code.git"
   },
   "author": "zaykkko",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/zaykkko/adventofcode/issues"
+    "url": "https://github.com/zaykkko/advent-of-code/issues"
   },
-  "homepage": "https://github.com/zaykkko/adventofcode#readme",
+  "homepage": "https://github.com/zaykkko/advent-of-code#readme",
   "devDependencies": {
     "@types/node": "^18.11.10",
     "@typescript-eslint/eslint-plugin": "^5.45.1",
     "@typescript-eslint/parser": "^5.45.1",
     "eslint": "^8.29.0",
+    "eslint-config-prettier": "^8.5.0",
+    "prettier": "^2.8.1",
     "tsc-alias": "^1.8.1",
     "typescript": "^4.9.3"
   }

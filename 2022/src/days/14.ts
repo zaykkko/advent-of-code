@@ -6,8 +6,7 @@ export default class Puzzle extends PuzzleHelper<number> {
   resolve() {
     //por temas de visualización almacenar el mínimo x y máximo x, y la profundidad de "y" nada más el máximo ya que el punto de inicio siempre es 0 en dicho eje y pues, siempre va a ser el valor más bajo xd
     let max_width = 0,
-      max_height = 0,
-      min_width = 0;
+      max_height = 0;
 
     const rocks_pos = new Set<string>();
 
@@ -22,7 +21,6 @@ export default class Puzzle extends PuzzleHelper<number> {
 
         max_height = Math.max(max_height, y, next_y);
         max_width = Math.max(max_width, x, next_x);
-        min_width = Math.min(x, next_x);
 
         if (x == next_x) {
           const max_y = Math.max(y, next_y),

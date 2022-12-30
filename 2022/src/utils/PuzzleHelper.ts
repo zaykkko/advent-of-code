@@ -2,11 +2,13 @@ import { readFileSync } from "fs";
 import { InputError } from "./InputError";
 
 export abstract class PuzzleHelper<RT = number | string> {
+  may_take_longer = false;
+
   protected raw_input = "";
 
   constructor(readonly input_path: string) {
     try {
-      this.raw_input = readFileSync(input_path, "utf-8");
+      this.raw_input = readFileSync(input_path, "utf-8").toString();
     } catch (err) {
       if (
         err instanceof Error &&

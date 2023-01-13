@@ -1,6 +1,6 @@
 import { PuzzleHelper } from "@utils/PuzzleHelper";
 
-export default class Puzzle extends PuzzleHelper<string> {
+export default class Puzzle extends PuzzleHelper {
   protected crate_map: string[][] = [];
   protected crate_map_part2: string[][] = [];
 

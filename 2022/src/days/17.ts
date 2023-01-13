@@ -2,7 +2,7 @@ import { PuzzleHelper } from "@utils/PuzzleHelper";
 
 type Coords = Record<string, number>;
 
-export default class Puzzle extends PuzzleHelper<number> {
+export default class Puzzle extends PuzzleHelper {
   may_take_longer = true;
 
   readonly part_1_cycles = 2022;

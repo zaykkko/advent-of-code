@@ -12,7 +12,7 @@ class Valve {
   ) {}
 }
 
-export default class Puzzle extends PuzzleHelper<number> {
+export default class Puzzle extends PuzzleHelper {
   protected start_valve_name = "AA";
 
   protected start_valve?: Valve;

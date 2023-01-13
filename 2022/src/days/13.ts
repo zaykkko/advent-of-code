@@ -8,7 +8,7 @@ enum COMPARE_RESULT {
   INVALID_EQUAL_NUM = 2,
 }
 
-export default class Puzzle extends PuzzleHelper<number> {
+export default class Puzzle extends PuzzleHelper {
   readonly divisors: PacketList = [[[2]], [[6]]];
 
   compare(left: PacketList, right: PacketList): number {

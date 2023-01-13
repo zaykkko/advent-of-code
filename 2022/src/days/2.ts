@@ -11,7 +11,7 @@ enum RPS_MATCH_RESULT {
   LOSE = 0,
 }
 
-export default class Puzzle extends PuzzleHelper<number> {
+export default class Puzzle extends PuzzleHelper {
   readonly RPS_ALIASES: Record<string, number> = {
     A: RPS.ROCK,
     B: RPS.PAPER,

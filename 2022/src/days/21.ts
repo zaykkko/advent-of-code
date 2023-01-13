@@ -74,7 +74,7 @@ class Monkey {
   }
 }
 
-export default class Puzzle extends PuzzleHelper<number> {
+export default class Puzzle extends PuzzleHelper {
   resolve() {
     const monkeys = new Map<string, Monkey>();
 

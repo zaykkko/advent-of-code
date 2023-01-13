@@ -1,6 +1,6 @@
 import { PuzzleHelper } from "utils/PuzzleHelper";
 
-export default class Puzzle extends PuzzleHelper<number> {
+export default class Puzzle extends PuzzleHelper {
   resolve() {
     const per_elf_raw = this.raw_input.split(/\n\n/);
     const per_elf_parsed = per_elf_raw.map((line) =>

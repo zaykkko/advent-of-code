@@ -1,6 +1,6 @@
 import { PuzzleHelper } from "@utils/PuzzleHelper";
 
-export default class Puzzle extends PuzzleHelper<number> {
+export default class Puzzle extends PuzzleHelper {
   resolve() {
     let totally_contained = 0,
       partially_contained = 0;

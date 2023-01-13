@@ -1,7 +1,7 @@
 import { PuzzleHelper } from "@utils/PuzzleHelper";
 import { groupArray } from "@utils/Arrays";
 
-export default class Puzzle extends PuzzleHelper<number> {
+export default class Puzzle extends PuzzleHelper {
   readonly abecedario = "abcdefghijklmnopqrstuvwxyz".split("");
   readonly upper_offset = 26;
 

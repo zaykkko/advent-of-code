@@ -3,6 +3,7 @@ import { join, resolve } from "path";
 import readline from "node:readline";
 
 import type { PuzzleHelper } from "./utils/PuzzleHelper";
+import { InputError } from "@utils/InputError";
 
 class PuzzleResolver {
   private _readline: readline.Interface;
@@ -54,34 +55,44 @@ class PuzzleResolver {
         }
 
         try {
-          import(day_path).then(
-            (module: {
-              default: { new (input_path: string): PuzzleHelper };
-            }) => {
-              const puzzle = new module.default(input_path);
+          import(day_path)
+            .then(
+              (module: {
+                default: { new (input_path: string): PuzzleHelper };
+              }) => {
+                const puzzle = new module.default(input_path);
 
-              console.log(
-                `\x1b[32m\x1b[4mDay ${day} responses are\x1b[0m:`,
-                ...(puzzle.may_take_longer
-                  ? ["\n", "(It may take longer than what's expected)"]
-                  : [])
-              );
+                console.log(
+                  `\x1b[32m\x1b[4mDay ${day} responses are\x1b[0m:`,
+                  ...(puzzle.may_take_longer
+                    ? ["\n", "(It may take longer than what's expected)"]
+                    : [])
+                );
 
-              const p_now = performance.now();
-              const [part1, part2] = puzzle.resolve();
-              const p_after = performance.now();
+                const p_now = performance.now();
+                const [part1, part2] = puzzle.resolve();
+                const p_after = performance.now();
 
-              console.log(
-                "\n",
-                `\x1b[36m* Part 1: \x1b[33m${part1}\x1b[0m`,
-                "\n",
-                `\x1b[36m* Part 2: \x1b[33m${part2}\x1b[0m`,
-                "\n",
-                `Puzzle took ${(p_after - p_now).toFixed(2)}ms to resolve.`,
-                "\n"
-              );
-            }
-          );
+                console.log(
+                  "\n",
+                  `\x1b[36m* Part 1: \x1b[33m${part1}\x1b[0m`,
+                  "\n",
+                  `\x1b[36m* Part 2: \x1b[33m${part2}\x1b[0m`,
+                  "\n",
+                  `Puzzle took ${(p_after - p_now).toFixed(2)}ms to resolve.`,
+                  "\n"
+                );
+              }
+            )
+            .catch((e) => {
+              if (e instanceof InputError) {
+                return console.error(
+                  `Unable to read the input data for day ${day}!`
+                );
+              }
+
+              throw e;
+            });
         } catch (e) {
           console.error(
             `An unexpected error just happened: ${(e as Error).message}`

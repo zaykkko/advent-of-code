@@ -26,7 +26,7 @@ class Monkey {
   }
 }
 
-export default class Puzzle extends PuzzleHelper<number> {
+export default class Puzzle extends PuzzleHelper {
   readonly part1_total_rounds = 20;
   readonly part2_total_rounds = 10000;
 

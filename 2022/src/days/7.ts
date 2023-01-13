@@ -114,7 +114,7 @@ class File {
   }
 }
 
-export default class Puzzle extends PuzzleHelper<number> {
+export default class Puzzle extends PuzzleHelper {
   readonly DISK_SPACE = 70000000;
   readonly UPDATE_REQUIRED_SPACE = 30000000;
   readonly MAX_DIR_SIZE = 100000;

@@ -1,6 +1,6 @@
 import { PuzzleHelper } from "@utils/PuzzleHelper";
 
-export default class Puzzle extends PuzzleHelper<number> {
+export default class Puzzle extends PuzzleHelper {
   readonly max_chars = 4;
   readonly max_chars_part2 = 14;
 

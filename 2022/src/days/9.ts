@@ -1,6 +1,6 @@
 import { PuzzleHelper } from "@utils/PuzzleHelper";
 
-export default class Puzzle extends PuzzleHelper<number> {
+export default class Puzzle extends PuzzleHelper {
   readonly directions_offset: Record<string, [number, number]> = {
     L: [-1, 0],
     R: [1, 0],

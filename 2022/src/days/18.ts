@@ -2,7 +2,7 @@ import { PuzzleHelper } from "@utils/PuzzleHelper";
 
 type TridimensionalGrid = (0 | 1)[][][];
 
-export default class Puzzle extends PuzzleHelper<number> {
+export default class Puzzle extends PuzzleHelper {
   readonly adjacent_offsets = [
     [-1, 0, 0],
     [0, -1, 0],

@@ -1,6 +1,6 @@
 import { PuzzleHelper } from "@utils/PuzzleHelper";
 
-export default class Puzzle extends PuzzleHelper<number> {
+export default class Puzzle extends PuzzleHelper {
   readonly sand_pound_start_pos = [500, 0];
 
   resolve() {

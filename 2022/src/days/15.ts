@@ -8,7 +8,7 @@ interface Sensor {
   manhattan: number;
 }
 
-export default class Puzzle extends PuzzleHelper<number> {
+export default class Puzzle extends PuzzleHelper {
   readonly part_1_target_y = 2_000_000;
   readonly part_2_max_y = 4_000_000;
 

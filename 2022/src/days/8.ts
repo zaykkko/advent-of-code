@@ -1,6 +1,6 @@
 import { PuzzleHelper } from "@utils/PuzzleHelper";
 
-export default class Puzzle extends PuzzleHelper<number> {
+export default class Puzzle extends PuzzleHelper {
   // Not the performant way to resolve this, but hey I'm practicing and learning hehe
   resolve() {
     const grid = this.cleanInput().map((row) => row.split("").map(Number));
